@@ -12,6 +12,7 @@ public final class TestPlugin extends JavaPlugin implements Listener {
 
     @EventHandler
     public void itemPickedUp(EntityPickupItemEvent event) {
+        getServer().getLogger().info("Item Picked up: " + event.getItem().getName() + " by " + event.getEntity().getName());
         if (event.getItem().getName().equals("Crown")) {
             PotionEffect potionEffect = new PotionEffect(PotionEffectType.HEALTH_BOOST, 9999999, 1);
             event.getEntity().addPotionEffect(potionEffect);
